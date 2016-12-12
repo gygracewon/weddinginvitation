@@ -1,0 +1,431 @@
+@import url(font-awesome.min.css);
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.html1 {
+  background-image: linear-gradient(#f8f8e8, #efe3eb);
+  background-repeat: none; }
+
+.border-deco {
+  position: relative;
+  background-image: url(../assets/img/border/border_MT.png), url(../assets/img/border/border_ML.png), url(../assets/img/border/border_MB.png), url(../assets/img/border/border-MR.png);
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+  background-position: top,right,bottom,left;
+  z-index: 50; }
+
+@font-face {
+  font-family: 'Besom-free-font';
+  src: url("../assets/fonts/Besom-free-font.ttf"); }
+
+@font-face {
+  font-family: 'VCR_OSD_MONO';
+  src: url("../assets/fonts/VCR_OSD_MONO.ttf"); }
+
+@font-face {
+  font-family: 'Quicksand', sans-serif; }
+
+.sub-title {
+  font-family: Quicksand, sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: 0.05em; }
+
+#flower-deco {
+  position: fixed;
+  top: 30em;
+  left: 3em; }
+
+.borders {
+  position: absolute; }
+
+#border-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999; }
+
+#border-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 800; }
+
+#border-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 800; }
+
+#border-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 800; }
+
+#welcome-text {
+  font-family: Quicksand, sans-serif;
+  font-weight: 500;
+  color: #ad91a4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: absolute;
+  top: 10em;
+  text-align: center;
+  left: 0;
+  width: 100%;
+  font-size: 15pt; }
+
+.welcome-deco {
+  text-align: center;
+  display: block;
+  margin: 0 auto; }
+
+#container {
+  padding-top: 5em;
+  position: relative;
+  z-index: 20; }
+  #container .deco {
+    display: block;
+    margin: 0 auto; }
+  #container .double-line {
+    max-width: 28em;
+    max-height: 2em;
+    padding-top: 1.5em;
+    display: block;
+    margin: 0 auto; }
+  #container .font-deco {
+    max-width: 45em; }
+  #container .characters {
+    max-height: 26.5em;
+    margin: 0 auto;
+    padding-bottom: 1em; }
+
+.carpet1 {
+  background: url("../assets/img/deco/carpet-background0.png") no-repeat top;
+  background-size: 39em auto; }
+  .carpet1 .names {
+    text-align: center;
+    padding: 3.5em 0 5em 0;
+    width: 15em;
+    margin: 0 auto; }
+    .carpet1 .names h2 {
+      font-family: Besom-free-font;
+      font-size: 5em;
+      color: #6d8fbb;
+      font-weight: 100;
+      letter-spacing: 0.03em; }
+    .carpet1 .names h2:nth-child(1) {
+      padding-bottom: 0.4em; }
+    .carpet1 .names h2:nth-child(2) {
+      font-size: 2.7em;
+      letter-spacing: 0.1em;
+      border-bottom: 1px #6d8fbb dotted;
+      border-top: 1px #6d8fbb dotted;
+      display: inline-block;
+      padding-top: 0.2em; }
+    .carpet1 .names h2:nth-child(3) {
+      padding-top: 0.4em; }
+  .carpet1 .save-date {
+    width: 26.8em;
+    font-family: VCR_OSD_MONO;
+    line-height: 140%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+    .carpet1 .save-date .deco-line {
+      max-width: 4em;
+      max-height: 2em;
+      padding: 0 0.5em;
+      vertical-align: text-top; }
+    .carpet1 .save-date .divider {
+      max-width: 2em;
+      max-height: 4.5em; }
+    .carpet1 .save-date .divider-line {
+      display: inline-block;
+      width: 0.15em;
+      height: 6em;
+      background-color: #cfc0a4; }
+    .carpet1 .save-date .save-date-title {
+      text-align: center; }
+      .carpet1 .save-date .save-date-title p {
+        display: inline-block;
+        vertical-align: top;
+        color: #ea9393; }
+      .carpet1 .save-date .save-date-title .heart {
+        width: 1.5em;
+        padding: 0 0.3em; }
+    .carpet1 .save-date .l-t-d {
+      margin-top: 1.5em;
+      color: #ad91a4;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      -ms-flex-pack: center;
+      justify-content: center; }
+    .carpet1 .save-date .location {
+      width: 7em;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0.5em 1.5em 0 0;
+      text-align: right; }
+      .carpet1 .save-date .location p {
+        font-size: 0.9em;
+        letter-spacing: 0.05em;
+        text-decoration: underline;
+        cursor: pointer; }
+    .carpet1 .save-date .date {
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      padding: 0 1em; }
+      .carpet1 .save-date .date p {
+        display: inline-block; }
+      .carpet1 .save-date .date p:nth-child(1) {
+        vertical-align: top;
+        font-size: 0.9em; }
+      .carpet1 .save-date .date p:nth-child(2) {
+        font-size: 4em;
+        color: #ea9393;
+        padding-top: 0.2em; }
+      .carpet1 .save-date .date p:nth-child(3) {
+        vertical-align: top;
+        font-size: 0.9em; }
+      .carpet1 .save-date .date p:nth-child(4) {
+        font-size: 0.8em;
+        text-transform: lowercase;
+        display: block; }
+      .carpet1 .save-date .date p:nth-child(5) {
+        display: block;
+        font-size: 1em; }
+    .carpet1 .save-date .time {
+      display: inline-block;
+      vertical-align: top;
+      padding: 1.3em 0 0 1.5em;
+      text-align: left; }
+      .carpet1 .save-date .time p {
+        font-size: 1.3em;
+        line-height: 1.3em; }
+
+.dear {
+  padding-top: 5em; }
+  .dear h3 {
+    position: absolute;
+    left: 23.5em;
+    color: #c3a4b9;
+    font-weight: 600;
+    top: 99.5em;
+    width: 100%;
+    left: 0; }
+  .dear .woodboard {
+    max-width: 14em; }
+  .dear .letter p {
+    font-family: VCR_OSD_MONO;
+    line-height: 1.9em;
+    font-size: 13px;
+    color: #6d8fbb; }
+  .dear .letter .letterby {
+    padding-top: 2em; }
+  .dear .letter .letter-inside {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 2em; }
+    .dear .letter .letter-inside p {
+      letter-spacing: 0.05em;
+      font-family: VCR_OSD_MONO;
+      line-height: 1.9em;
+      font-size: 13px;
+      color: #6d8fbb;
+      width: 30em;
+      text-align: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+  .dear .letter .sprinkle1 {
+    padding: 4em 2em 0 1em;
+    max-width: 4em;
+    max-height: 8em; }
+  .dear .letter .sprinkle2 {
+    padding: 4em 1em 0 2em;
+    max-width: 4em;
+    max-height: 8em; }
+
+.center {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto; }
+
+.carpet2 {
+  background: url("../assets/img/deco/carpet-background2.png") no-repeat top;
+  background-size: 39em auto;
+  position: relative; }
+  .carpet2 .rsvp {
+    padding: 4em 0;
+    color: #6e6050; }
+  .carpet2 .squirly-r, .carpet2 .squirly-l {
+    max-width: 6em;
+    max-height: 10em; }
+  .carpet2 .squirly-b {
+    max-width: 14em;
+    max-height: 14em; }
+  .carpet2 h2 {
+    display: inline-block;
+    font-family: VCR_OSD_MONO;
+    letter-spacing: 0.3em;
+    color: #c3a4b9;
+    vertical-align: middle;
+    font-weight: 100;
+    padding: 0 0.5em; }
+  .carpet2 .rsvp-form {
+    padding: 2em 0;
+    margin: 0 auto;
+    text-align: left;
+    width: 15em;
+    font-family: VCR_OSD_MONO;
+    font-size: 15px; }
+    .carpet2 .rsvp-form p, .carpet2 .rsvp-form input, .carpet2 .rsvp-form label, .carpet2 .rsvp-form textarea {
+      display: inline-block; }
+    .carpet2 .rsvp-form label {
+      padding: 0 0.5; }
+    .carpet2 .rsvp-form textarea {
+      width: 22em;
+      height: 10em;
+      font-family: Quicksand, sans-serif;
+      border: 2px solid #fff; }
+    .carpet2 .rsvp-form div:nth-child(1) label {
+      padding-left: 0.5em; }
+    .carpet2 .rsvp-form div {
+      padding-bottom: 1.5em; }
+    .carpet2 .rsvp-form .button {
+      font-family: VCR_OSD_MONO;
+      text-transform: uppercase;
+      background-color: transparent;
+      border: 2px #ad91a4 solid;
+      padding: 0.5em;
+      display: block;
+      font-size: 15px;
+      color: #ad91a4;
+      margin: 0 auto; }
+    .carpet2 .rsvp-form select {
+      padding: 0;
+      margin: 0;
+      border: 1px solid #ccc;
+      width: 3em;
+      border-radius: 0px;
+      border: 1px #fff solid;
+      background-color: #fff;
+      background: #fff; }
+    .carpet2 .rsvp-form #rsvp-msg {
+      margin-top: 1em; }
+      .carpet2 .rsvp-form #rsvp-msg label {
+        text-decoration: underline;
+        margin-bottom: 0.5em; }
+  .carpet2 .photo-frame {
+    width: 34em;
+    height: 22em;
+    margin: auto;
+    position: relative;
+    top: 0;
+    left: 0; }
+    .carpet2 .photo-frame img {
+      max-width: 100%;
+      position: relative;
+      top: 0;
+      left: 0; }
+    .carpet2 .photo-frame .wedding-photo {
+      position: absolute;
+      top: 2.4em;
+      left: 3.5em;
+      max-width: 80%; }
+  .carpet2 .arrows {
+    margin-top: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    cursor: pointer; }
+    .carpet2 .arrows .side-arrow {
+      max-height: 2em;
+      padding: 0.2em;
+      border: 2px #d2d5c2 solid; }
+  .carpet2 .contact {
+    padding: 5em 0 4em 0;
+    text-align: center;
+    display: block;
+    margin: 0 auto; }
+    .carpet2 .contact .see-you {
+      display: block; }
+      .carpet2 .contact .see-you .leaf-l, .carpet2 .contact .see-you .leaf-r {
+        display: inline-block;
+        max-width: 4em;
+        padding: 0.3em; }
+      .carpet2 .contact .see-you p {
+        font-family: Quicksand, sans-serif;
+        font-size: 1.2em;
+        font-weight: 600;
+        display: inline-block;
+        color: #6e6050;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        margin-top: 7em;
+        padding: 0.3em 0;
+        border-bottom: 1px #6e6050 dotted;
+        border-top: 1px #6e6050 dotted; }
+    .carpet2 .contact .bride-groom {
+      display: inline-block; }
+      .carpet2 .contact .bride-groom .heart1 {
+        display: block;
+        margin: 0 auto;
+        max-height: 2em; }
+      .carpet2 .contact .bride-groom .heart2 {
+        display: block;
+        margin: 0 auto;
+        padding-top: 1em;
+        max-height: 1em; }
+      .carpet2 .contact .bride-groom p {
+        padding-top: 0.7em;
+        font-family: VCR_OSD_MONO;
+        color: #6e6050;
+        letter-spacing: 0.05em;
+        font-size: 0.9em; }
+      .carpet2 .contact .bride-groom .bride-face, .carpet2 .contact .bride-groom .groom-face {
+        max-height: 4.5em;
+        padding: 0 2em; }
+      .carpet2 .contact .bride-groom div {
+        display: inline-block; }
+
+.arrow {
+  display: block;a
+  margin: 0 auto;
+  max-width: 6em;
+  padding-top: 3em; }
+
+.login-box {
+  vertical-align: middle;
+  margin-top: 18em; }
+  .login-box h3 {
+    font-family: VCR_OSD_MONO;
+    padding-bottom: 1em; }
+  .login-box input:nth-child(1) {
+    padding: 1em;
+    width: 25em;
+    box-shadow: none; }
+  .login-box .button {
+    font-family: VCR_OSD_MONO;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px #ad91a4 solid;
+    padding: 0.5em;
+    display: inline-block;
+    font-size: 15px;
+    color: #ad91a4;
+    margin: 0 auto; }
+
+@media only screen and (max-device-width: 480px) {
+  .borders {
+    display: none; } }

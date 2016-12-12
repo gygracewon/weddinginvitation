@@ -1,0 +1,638 @@
+*{
+	margin:0;
+	padding:0;
+}
+.html1{
+	background-image: linear-gradient(#f8f8e8,#efe3eb);
+    background-repeat: none;
+}
+.border-deco{
+	position:relative;
+	background-image:url(../assets/img/border/border_MT.png),url(../assets/img/border/border_ML.png),url(../assets/img/border/border_MB.png),url(../assets/img/border/border-MR.png);
+	background-repeat:repeat-x, repeat-y, repeat-x, repeat-y;
+	background-position:top,right,bottom,left;
+	z-index:50;
+
+}
+ @font-face {
+	font-family: 'Besom-free-font';
+	src: url('../assets/fonts/Besom-free-font.ttf');
+ }
+@font-face {
+	font-family: 'VCR_OSD_MONO';
+	src: url('../assets/fonts/VCR_OSD_MONO.ttf');
+ }
+ @font-face {
+	font-family: 'Quicksand', sans-serif;
+ }
+$besom-font : Besom-free-font;
+$vcr-font : VCR_OSD_MONO;
+$font-stack : Quicksand, sans-serif;
+$darkblue : #6d8fbb;
+$blackblue : #184074;
+$lightpurple: #c3a4b9;
+$lightpurple2: #ad91a4;
+$lightgold: #cfc0a4;
+$brown: #6e6050;
+$lightred : #ea9393;
+$lightblue : #6d8fbb;
+
+.sub-title{
+	font-family: $font-stack;
+	font-weight: 600;
+	font-size: 0.9em;
+	letter-spacing: 0.05em;
+}
+
+#flower-deco{
+	position:fixed;
+	top:30em;
+	left:3em;
+}
+
+.borders{
+	position:absolute;
+}
+#border-tl{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:999;
+}
+#border-tr{
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:800;
+}
+#border-br{
+	position:absolute;
+	bottom:0;
+	right:0;
+	z-index:800;
+}
+#border-bl{
+	position:absolute;
+	bottom:0;
+	left:0;
+	z-index:800;
+}
+	#welcome-text{
+		font-family: $font-stack;
+		font-weight: 500;
+		color: $lightpurple2;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		position:absolute;
+		top:10em;
+		text-align: center;
+		left:0;
+		width:100%;
+		font-size: 15pt;
+	}
+	
+	.welcome-deco{
+		// position:relative;
+		text-align: center;
+		display: block;
+		margin:0 auto;
+		// width: 40em;
+	}
+
+#container{
+	
+	padding-top:5em;
+
+    position:relative;
+    z-index:20;
+
+	.deco{
+		display: block;
+		margin:0 auto;
+	}
+
+	.double-line{
+		max-width:28em;
+		max-height:2em;
+		padding-top:1.5em;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.font-deco{
+		max-width: 45em;
+
+	}
+	.characters{
+		max-height:26.5em;
+		margin:0 auto;
+		padding-bottom:1em;
+	}
+}	
+
+.carpet1{
+	background: url('../assets/img/deco/carpet-background0.png') no-repeat top;
+	background-size:39em auto;
+
+	.names{
+		text-align: center;
+		padding: 3.5em 0 5em 0;
+		width:15em;
+		margin:0 auto;
+
+		h2{
+			font-family: $besom-font;
+			font-size: 5em;
+			color: $darkblue;
+			font-weight: 100;
+			letter-spacing: 0.03em;
+		}
+
+		h2:nth-child(1){
+			padding-bottom:0.4em;
+		}
+
+		h2:nth-child(2){
+			font-size:2.7em;
+			letter-spacing: 0.1em;
+			border-bottom:1px $darkblue dotted;
+			border-top:1px $darkblue dotted;
+			display: inline-block;
+			padding-top:0.2em;
+		}
+
+		h2:nth-child(3){
+			padding-top:0.4em;
+
+		}
+
+	}
+	.save-date{
+			width:26.8em;
+			font-family: $vcr-font;
+			line-height: 140%;
+			margin: 0 auto;
+			text-transform:uppercase;
+			letter-spacing: 0.05em;
+
+			.deco-line{
+				max-width:4em;
+				max-height:2em;
+				padding: 0 0.5em;
+				vertical-align: text-top;
+			}	
+
+			.divider{
+				max-width:2em;
+				max-height:4.5em;
+			}
+
+			.divider-line{
+				display: inline-block;
+				width:0.15em;
+				height: 6em;
+				background-color: $lightgold;
+			}
+		
+			.save-date-title{
+				text-align:center;
+
+				p{
+					display: inline-block;
+					vertical-align: top;
+					color:$lightred;
+				}	
+			
+				.heart{
+					width:1.5em;
+					padding: 0 0.3em;
+				}
+			}
+
+			 .l-t-d{		
+			 	margin-top: 1.5em;
+			 	color: $lightpurple2;
+			 	display: flex;
+				flex: 0 0 100%;
+				justify-content: center;
+			 }
+
+			.location{
+
+				width:7em;
+				display: inline-block;
+				vertical-align: top;
+				padding: 0.5em 1.5em 0 0;
+				text-align: right;
+
+				p{
+					font-size:0.9em;
+					letter-spacing: 0.05em;
+					text-decoration: underline;
+					cursor:pointer;
+				}
+			}
+
+			.date{
+				display: inline-block;
+				text-align: center;
+				vertical-align: top;
+				padding: 0 1em;
+
+				p{
+					display:inline-block;
+				}
+
+				p:nth-child(1){
+					 vertical-align: top;
+					 font-size:0.9em;
+				}
+
+				p:nth-child(2){
+					font-size: 4em;
+					color:$lightred;	
+					padding-top:0.2em;
+				}
+
+				p:nth-child(3){
+					vertical-align: top;
+					 font-size:0.9em;
+				}
+
+				p:nth-child(4){
+					font-size: 0.8em;
+					text-transform: lowercase;
+					display: block;
+				}
+
+				p:nth-child(5){
+					display: block;
+					font-size: 1em;
+				}
+
+			}
+
+			.time{
+
+				display: inline-block;
+				vertical-align: top;
+				padding: 1.3em 0 0 1.5em;
+				text-align: left;
+
+				p{
+					font-size: 1.3em;
+					line-height: 1.3em;
+				}
+
+			}
+	}
+}
+
+.dear{
+
+	padding-top:5em;
+	
+	h3{
+		position:absolute;
+		left:23.5em;
+		color:$lightpurple;
+		font-weight: 600;
+		top:99.5em;
+		width:100%;
+		left:0;
+	}
+
+	.woodboard{
+		max-width:14em;	
+	}
+
+	.letter{
+		
+		p{
+			font-family: $vcr-font;
+			line-height:1.9em;
+			font-size: 13px;
+			color: $lightblue;
+		}
+
+		.letterby{
+			padding-top:2em;
+		}
+
+		.letter-inside{
+				display: flex;
+				flex: 0 0 100%;
+				justify-content: center;
+				margin-top:2em;
+
+			p{	
+				letter-spacing: 0.05em;
+				font-family: $vcr-font;
+				line-height:1.9em;
+				font-size: 13px;
+				color: $lightblue;
+				width: 30em;
+				text-align: center;
+				justify-content: center;
+			}
+		}
+
+		.sprinkle1{
+			padding: 4em 2em 0 1em;
+			max-width:4em;
+			max-height: 8em;
+		}
+
+		.sprinkle2{
+			padding: 4em 1em 0 2em;
+			max-width:4em;
+			max-height: 8em;
+		}
+	}
+}
+
+.center{
+	text-align:center;
+	width:100%;
+	margin:0 auto;
+}
+.carpet2{
+	background: url('../assets/img/deco/carpet-background2.png') no-repeat top;
+	background-size:39em auto;
+	position: relative;
+
+	.rsvp{
+		padding: 4em 0;
+		color: $brown;
+	}
+
+	.squirly-r, .squirly-l{
+		max-width:6em;
+		max-height: 10em;
+	}
+
+	.squirly-b{
+		max-width:14em;
+		max-height: 14em;
+	}
+
+	h2{
+		display: inline-block;
+		font-family: $vcr-font;
+		letter-spacing: 0.3em;
+		color: $lightpurple;
+		vertical-align:middle;
+		font-weight: 100;
+		padding: 0 0.5em;
+	}
+
+	.rsvp-form{
+		padding: 2em 0;
+		margin:0 auto;
+		text-align: left;
+		width: 15em;
+		font-family: $vcr-font;
+		font-size: 15px;
+
+		p,input,label,textarea{
+			display: inline-block;
+
+		}
+
+		label{
+			padding: 0 0.5
+		}
+
+		textarea{
+			width:22em;
+			height: 10em;
+			font-family: $font-stack;
+			border:2px solid #fff;
+		}
+
+		div:nth-child(1) label{
+			padding-left: 0.5em;
+		}
+
+		div{
+			padding-bottom:1.5em;
+		}
+
+		.button{
+			font-family: $vcr-font;
+			text-transform: uppercase;
+			background-color: transparent;
+			border:2px $lightpurple2 solid;
+			padding: 0.5em;
+			display: block;
+			font-size:15px;
+			color: $lightpurple2;
+			margin: 0 auto;
+		}
+
+		select{
+			  padding: 0;
+			  margin: 0;
+			  border: 1px solid #ccc;
+			  width: 3em;
+			  border-radius:0px;
+			  border: 1px #fff solid;
+			  background-color: #fff;
+			  background: #fff;
+		}
+
+		#rsvp-msg{
+			margin-top: 1em;
+
+			label{
+				text-decoration: underline;
+				margin-bottom: 0.5em;
+			}
+
+		}
+
+	}
+	.photo-frame{
+		width:34em;
+		height: 22em;
+		margin: auto;
+		position:relative;
+		top:0;
+			left:0;
+		
+		img{
+			max-width: 100%;
+			position:relative;
+			top:0;
+			left:0;
+
+		}
+		.wedding-photo{
+			position:absolute;
+			top:2.4em;
+			left:3.5em;
+			max-width: 80%;
+		}
+			
+	}
+
+	.arrows{
+		margin-top:1.5em;
+		margin-left:auto;
+		margin-right:auto;
+		text-align:center;
+		cursor: pointer;
+
+		.side-arrow{
+		max-height:2em;
+		padding: 0.2em;
+		border:2px #d2d5c2 solid;
+		}
+	}
+	.contact{
+		padding:5em 0 4em 0;
+		text-align:center;
+		display: block;
+		margin:0 auto;
+
+		.see-you{
+			display:block;
+
+			.leaf-l, .leaf-r{
+				display: inline-block;
+				max-width: 4em;
+				padding:0.3em;
+			}
+
+			p{
+				font-family: $font-stack;
+				font-size: 1.2em;
+				font-weight: 600;
+				display: inline-block;
+				color:$brown;
+				text-transform: uppercase;
+				letter-spacing: 0.09em;
+				margin-top:7em;
+				padding: 0.3em 0;
+				border-bottom:1px $brown dotted;
+				border-top:1px $brown dotted;
+			}
+		}
+
+		.bride-groom{
+			display:inline-block;
+
+			.heart1{
+				display: block;
+				margin:0 auto;
+				max-height: 2em;
+			}
+
+			.heart2{
+				display: block;
+				margin:0 auto;
+				padding-top:1em;
+				max-height: 1em;
+			}
+
+			p{
+				padding-top:0.7em;
+				font-family: $vcr-font;
+				color: $brown;
+				// text-decoration:underline;
+				letter-spacing: 0.05em;
+				font-size: 0.9em;
+			}
+
+			.bride-face, .groom-face{
+				max-height: 4.5em;
+				padding: 0 2em;
+			}
+			div{
+				display: inline-block;
+			}
+		}
+
+	}
+	
+	
+
+}
+.arrow{
+	display:block;
+	margin: 0 auto;
+	max-width:6em;
+	padding-top:3em;
+}
+
+// ---------------- LOGIN PAGE---------------- //
+
+.login-box{
+	vertical-align:middle;
+	margin-top:18em;
+	h3{
+		font-family: $vcr-font;
+		padding-bottom:1em;
+	}
+	input:nth-child(1){
+		padding:1em;
+		width: 25em;
+		box-shadow: none;
+
+	}
+	.button{
+			font-family: $vcr-font;
+			text-transform: uppercase;
+			background-color: transparent;
+			border:2px $lightpurple2 solid;
+			padding: 0.5em;
+			display: inline-block;
+			font-size:15px;
+			color: $lightpurple2;
+			margin: 0 auto;
+		}
+
+}
+
+		
+// .email{
+// 	background-color: transparent;
+//     background-image: none;
+//     border-bottom: 1px solid black;
+//     font-size: 11px;
+//     height: 35px;
+//     margin: 0 auto;
+//     outline: none;
+//     text-align: center;
+//     width: 100%;
+//     z-index: 1;
+// }
+
+@media only screen and (max-device-width: 480px) {
+		.borders{
+			display: none;
+		}
+		// div#wrapper {
+		// 	width: 400px;
+		// }
+
+		// div#header {
+		// 	background-image: url(media-queries-phone.jpg);
+		// 	height: 93px;
+		// 	position: relative;
+		// }
+
+		// div#header h1 {
+		// 	font-size: 140%;
+		// }
+
+		// #content {
+		// 	float: none;
+		// 	width: 100%;
+		// }
+
+		// #navigation {
+		// 	float:none;
+		// 	width: auto;
+		// }
+	}
