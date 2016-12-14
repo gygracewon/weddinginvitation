@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     //
-    public function guest(){
+    public function invitation(){
     	return $this->belongsto('App\Models\Invitation');
     }
 }

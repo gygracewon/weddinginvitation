@@ -22,9 +22,9 @@
 
 			<div class="carpet1">
 				<div class="names">
-					<h2>Grace</h2>
+					<h2>{{$invitation->user->bride_firstname}}</h2>
 					<h2>and</h2>
-					<h2>John</h2>
+					<h2>{{$invitation->user->groom_firstname}}</h2>
 				</div>
 
 				<div class="save-date">
@@ -45,6 +45,7 @@
 						<div class="location">
 							<p>{{$invitation->location}}</p>
 						</div>
+
 						<div class="divider-line"></div>
 
 						<div class="date">
@@ -60,7 +61,7 @@
 
 						<div class="time">
 							<p>{{$invitation->time}}</p>
-							<p>PM</p>
+						
 						</div>						
 					</div>	
 				</div>
@@ -81,7 +82,7 @@
 
 							</div>
 							
-							<p class="letterby">Grace & John</p>
+							<p class="letterby">{{$invitation->user->bride_firstname}} & {{$invitation->user->groom_firstname}}</p>
 						</div>
 					</div>		
 
@@ -96,32 +97,44 @@
 						<h2>RSVP</h2>
 						<img class="squirly-r" src="{{asset('assets/img/deco/squirly-r.png')}}" alt="">
 
-						<form class="rsvp-form" action="demo_form.asp" method="get">
+						 {!! Form::open(['url' => 'invitations/'.$invitation->id.'/'.$guest->usercode, 'method'=>'put' , 'role'=>'form' , 'class'=>'rsvp-form']) !!}
 							<div>
-								<p>Attendance :</p>			
-								<input type="checkbox" name="attendance" class="checkbox" value="yes"><label for="">Yes</label>
-								<input type="checkbox" class="checkbox" name="attendance" value="no"><label for="">No</label>
+								<p>Attendance :</p>	
+								{{ Form::checkbox('attendance','1' ,['class'=>'checkbox', 'value'=>'yes']) }}
+								<label for="">Yes</label>
+
+								{{ Form::checkbox('attendance' ,'0',['class'=>'checkbox', 'value'=>'no']) }}
+								<label for="">No</label>
+	
 						  	</div>
 
-						  	<div>	
-						  		<input type="checkbox" name="vegeterian" class="checkbox" value="yes"> 
+						  	<div>
+						  		{{ Form::checkbox('invitee' ,'$guest->invitee',['class'=>'checkbox', 'value'=>'no']) }}
 								<label for=""> + one </label>
 						  		  		
 							</div>
 
 							<div>
 							
-								<input type="checkbox" name="vegeterian" class="checkbox" value="yes"> 
+								{{ Form::checkbox('vegeterian' ,'$guest->vegeterian',['class'=>'checkbox', 'value'=>'no']) }}
+
+								{{-- {{ Form::checkbox('isAdmin', '1', Input::old('isAdmin'), $roles->isAdmin)) }} --}}
 
 								<label for="">Vegeterian</label>
 							</div>
 
 							<div id="rsvp-msg">
-								<label for="">Message to Grace & John : </label>
-							 	<textarea name="comment" form="userform"></textarea>
+								<label for="">Message to {{$invitation->user->bride_firstname}} & {{$invitation->user->groom_firstname}} : 
+								</label>
+							 	
+							 	{{ Form::text('message' ,$guest->message,['form'=>'userform', 'value'=>'no']) }}
+
+							 {{-- 	<textarea name="comment" form="userform">{{$guest->message}}</textarea>
+
+							 	  {{ Form::text('location' ,$invitation->location, ['class'=>'form-control']) }} --}}
 							</div>
 				
-						   <input class="button" type="submit" value="Submit">  
+						   <button class="button" type="submit">Submit</button>
 						</form>
 
 						<img class="squirly-b" src="{{asset('assets/img/deco/squirly-b.png')}}" alt="">	
@@ -134,7 +147,7 @@
 					<img class="frame" src="{{asset('assets/img/deco/frame.png')}}" alt="">
 
 
-						<img class="wedding-photo0 wedding-photo" src="{{asset('assets/photo/wedding0.jpg')}}" alt="">
+						<img class="wedding-photo0 wedding-photo" src="{{asset('assets/photo/'.$invitation->photos[0]->url)}}" alt="">
 
 				</div>	
 					<div class="arrows">
@@ -144,20 +157,34 @@
 					</div>	
 
 					<div class="contact">
-		<!-- 				
-						<img class="arrow" src="assets/img/deco/arrow.png" alt=""> -->
+						
+					
 						<div class="bride-groom">
 							<img class="heart1" src="{{asset('assets/img/deco/heart.png')}}" alt="">
 							<img class="heart2" src="{{asset('assets/img/deco/heart.png')}}" alt="">
 							<div>
-								<img class="groom-face" src="{{asset('assets/img/deco/groom-face.png')}}" alt=""><p>021-054-0156</p>
+								<img class="groom-face" src="{{asset('assets/img/deco/groom-face.png')}}" alt=""><p>{{$invitation->user->groom_mobile}}</p>
 							</div>
 							<div>
-							<img class="bride-face" src="{{asset('assets/img/deco/bride-face.png')}}" alt=""><p>{{Auth::user()->groom_mobile}}</p>
+							<img class="bride-face" src="{{asset('assets/img/deco/bride-face.png')}}" alt=""><p>{{$invitation->user->bride_mobile}}</p>
 							</div>	
-						</div>						
+						</div>
+						
+				{{-- 		@if (Auth::check()) --}}
+		                        
+		                        
+		                        <div style="margin-top:3em;">
+		                        	 <button class="edit" type="submit">
+		                        	 <a href="{{url('invitations/'.$invitation->id.'/edit')}}">
+		                        	 Edit Invitation
+		                        	 </a></button>
+		                        </div>
+		                          
+		                   	 
+		            {{--     @endif   --}}		
 						<div class="see-you">
 							<img class="leaf-l" src="{{asset('assets/img/deco/leaf-l.png')}}" alt="">
+
 							<p>See you all there!</p>
 							<img class="leaf-r" src="{{asset('assets/img/deco/leaf-r.png')}}" alt="">
 						</div>	

@@ -2,29 +2,44 @@
 @section('content')
 
                 <!-- content--> 
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Create Guest
+                        </h1>
+                    </div>
+                </div>
 
                <div class="row">
                    <div class="col-lg-3">
-                        <form role="form">
+                        {!! Form::open(['url' => 'guests']) !!}
+
                             <div class="form-group">
-                                <h3>Register Guest</h3>
                                  <label>Usercode</label>
-                                <input class="form-control" placeholder="Enter text"><div><button>random code</button></div>
+                                 {{ Form::text('usercode','',['class'=>'form-control']) }}
+                                <div><button>random code</button></div>
                                 
                                 
                                 <label>Firstname</label>
-                                <input class="form-control" placeholder="Enter text">
+                                {{ Form::text('first_name','',['class'=>'form-control']) }}
 
                                 <label>Lastname</label>
-                                <input class="form-control" placeholder="Enter text">
+                                {{ Form::text('last_name','',['class'=>'form-control']) }}
+
+                                {{ Form::hidden('user_id', 1) }}
 
                             </div>
 
-                              <button type="submit" class="btn btn-primary">Register</button>
-                         </form>
+                              {{ Form::submit('Submit',['class'=>'btn btn-primary']) }}
+                         {!! Form::close() !!}
                     </div> 
 
-                    <div class="col-lg-10">
+                    {{-- div class="col-lg-10">
                         
                         <div class="table-responsive">
 
@@ -86,7 +101,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                    </div>                
+                    </div>        --}}         
                 </div>
                <!-- /.row-fluid -->
 

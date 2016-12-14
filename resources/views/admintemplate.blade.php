@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,19 +18,9 @@
     <!-- Custom CSS -->
     <link href="{{asset('assets/css/sb-admin.css')}}" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <!-- <link href="css/plugins/morris.css" rel="stylesheet"> -->
-
     <!-- Custom Fonts -->
     <link href="{{asset('assets/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -48,6 +39,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html"> Hello, Grace & John</a>
+
             </div>
            
 
@@ -58,27 +50,40 @@
                     </li>
 
                     <li class="active">
-                        <a href="adminprofile.html"><i class="fa fa-fw fa-comment"></i> Message from Guests</a>
+                        <a href="{{url('invitations/create')}}"><i class="fa fa-plus"></i> Create Invitation</a>
                     </li>
 
-                     <li>
-                        <a href="invitation.html"><i class="fa fa-fw fa-wrench"></i> Manage Inivitation</a>
+                    {{--  <li>
+                        <a href="{{url('invitations/'.$invitation->id.'/edit')}}"><i class="fa fa-fw fa-wrench"></i> Edit Inivitation</a>
                     </li>
-                   
+              
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-user"></i> Guests <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="viewguest.html">View Guests</a>
-                            </li>
-                            <li>
-                                <a href="manageguest.html">Manage Guests</a>
-                            </li>
-                        </ul>
+                        <a href="{{url('guests/'.$invitation->id)}}"><i class="fa fa-fw fa-eye"></i> View Guests</a>
+                    </li> --}}
+                    <li>
+                        <a href="{{url('guests/create')}}"><i class="fa fa-fw fa-users"></i> Create Guests</a>
+                    </li>
+
+                    <li>
+                       {{--  @foreach(App\Models\Invitation::all() as $Invitation)
+ --}}
+                        <a href="{{url('message/'.$invitation->id)}}"><i class="fa fa-fw fa-comment"></i> Message from Guests</a>
+                    </li>
+                     
                     </li>
                     <li>
                         <a href="sendemail.html"><i class="fa fa-fw fa-envelope"></i> Send Notification</a>
                     </li>
+
+                    @if (Auth::check())
+                        <li>
+                            <a href="{{url('logout')}}">Logout</a> 
+                        </li> 
+                    @else 
+                        <li>    
+                            <a href="{{url('adminlogin')}}">Login</a>
+                        </li>
+                    @endif    
 
                 </ul>
             </div>
@@ -98,10 +103,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-  {{--   <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script> --}}
 
 </body>
 
