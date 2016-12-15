@@ -14,7 +14,9 @@
 	z-index:50;
 
 }
-
+.classarea{
+	height: 500px;
+}
  @font-face {
 	font-family: 'Besom-free-font';
 	src: url('../assets/fonts/Besom-free-font.ttf');
@@ -446,7 +448,18 @@ $lightblue : #6d8fbb;
 		}
 
 		
-
+		.button{
+			font-family: $vcr-font;
+			text-transform: uppercase;
+			background-color: transparent;
+			border:2px $lightpurple2 solid;
+			padding: 0.5em;
+			display: inline-block;
+			font-size:15px;
+			color: $lightpurple2;
+			margin: 0 auto;
+		}
+	
 		select{
 			  padding: 0;
 			  margin: 0;

@@ -97,28 +97,36 @@
 						<h2>RSVP</h2>
 						<img class="squirly-r" src="{{asset('assets/img/deco/squirly-r.png')}}" alt="">
 
-						 {!! Form::open(['url' => 'invitations/'.$invitation->id.'/'.$guest->usercode, 'method'=>'put' , 'role'=>'form' , 'class'=>'rsvp-form']) !!}
+						 {{-- {!! Form::open(['url' => 'invitations/'.$invitation->id.'/'.$guest->usercode, 'method'=>'put' , 'role'=>'form' , 'class'=>'rsvp-form']) !!} --}}
+
+						 {!! Form::open(['url' => 'invitations/'.$invitation->id, 'method'=>'put' , 'role'=>'form' , 'class'=>'rsvp-form']) !!}
 							<div>
 								<p>Attendance :</p>	
-								{{ Form::checkbox('attendance','1' ,['class'=>'checkbox', 'value'=>'yes']) }}
+								{{-- {{ Form::checkbox('attendance','1' ,['class'=>'checkbox', 'value'=>'yes']) }} --}}
+								{{ Form::radio('attendance', 1, true, ['class' => 'checkbox']) }}
+
 								<label for="">Yes</label>
 
-								{{ Form::checkbox('attendance' ,'0',['class'=>'checkbox', 'value'=>'no']) }}
+								{{-- {{ Form::checkbox('attendance' ,'0',['class'=>'checkbox', 'value'=>'no']) }} --}}
+
+								{{ Form::radio('attendance', 1, false, ['class' => 'checkbox']) }}
 								<label for="">No</label>
 	
 						  	</div>
 
 						  	<div>
-						  		{{ Form::checkbox('invitee' ,'$guest->invitee',['class'=>'checkbox', 'value'=>'no']) }}
+
+						  		{{ Form::checkbox('invitee' ,'$guest->invitee',['class'=>'checkbox']) }}
+
+
 								<label for=""> + one </label>
 						  		  		
 							</div>
 
 							<div>
 							
-								{{ Form::checkbox('vegeterian' ,'$guest->vegeterian',['class'=>'checkbox', 'value'=>'no']) }}
+								{{ Form::checkbox('vegeterian' ,'$guest->vegeterian',['class'=>'checkbox']) }}
 
-								{{-- {{ Form::checkbox('isAdmin', '1', Input::old('isAdmin'), $roles->isAdmin)) }} --}}
 
 								<label for="">Vegeterian</label>
 							</div>
@@ -127,7 +135,7 @@
 								<label for="">Message to {{$invitation->user->bride_firstname}} & {{$invitation->user->groom_firstname}} : 
 								</label>
 							 	
-							 	{{ Form::text('message' ,$guest->message,['form'=>'userform', 'value'=>'no']) }}
+							 	{{ Form::text('message' ,$guest->message,['form'=>'userform','class'=>'textarea' ,'value'=>'no']) }}
 
 							 {{-- 	<textarea name="comment" form="userform">{{$guest->message}}</textarea>
 

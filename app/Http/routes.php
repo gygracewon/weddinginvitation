@@ -14,7 +14,9 @@
 // imports the post model so that we can use it in the /save route
 // use App\Post;
 
-Route::get('user/{id}', function ($id) {
+
+
+Route::get('users/{id}', function ($id) {
 
 	$user = App\Models\User::find($id);
 
@@ -24,6 +26,17 @@ Route::get('user/{id}', function ($id) {
 Route::get('invitations/create',function(){
     return view('createinvitation');
 });
+
+// Route::get('invitations/{id}', function($id) {
+
+// 	$userCode = '76535786';
+
+// 	$guest = App\Models\Guest::where('usercode',$userCode)->first();
+
+//    	$invitation = App\Models\Invitation::find($id);
+
+//     return view('invitation',['invitation'=>$invitation,'guest'=>$guest]);
+// });
 
 Route::get('invitations/{id}', function($id) {
 
@@ -36,7 +49,6 @@ Route::get('invitations/{id}', function($id) {
     return view('invitation',['invitation'=>$invitation,'guest'=>$guest]);
 });
 
-
 Route::post('invitations',function(){
 	//1: Getting input
 	$input = Request::all();
@@ -44,8 +56,10 @@ Route::post('invitations',function(){
 	$rules = [
 		'location'=>'required',
 		'day'=>'required', 
+		'month'=>'required',
 		'time'=>'required',
 		'letter'=>'required',
+	
 	];
 	//3:Create validator
 	$validator = Validator::make($input,$rules);
@@ -67,10 +81,12 @@ Route::post('invitations',function(){
 		}
 
 		return redirect ('/invitations/'.$invitation->id);
-		// return redirect ('/invitations/'.$invitation->id);
+
 	}else{
+
 		return redirect('invitations/create')->withInput()->withErrors($validator);
 	}
+
 });
 
 Route::get('invitations/{id}/edit', function ($id) {
@@ -82,19 +98,52 @@ Route::get('invitations/{id}/edit', function ($id) {
 
 Route::put('invitations/{id}', function ($id) {
 
+	//1: Getting input
 	$input = Request::all();
+	//2: Create Validation rules
+	$rules = [
+		'location'=>'required',
+		'day'=>'required', 
+		'month'=>'required',
+		'time'=>'required',
+		'letter'=>'required',
+		'photo'=>'required',
+	];
+	//3:Create validator
+	$validator = Validator::make($input,$rules);
 
-	$invitation = App\Models\Invitation::find($id);
+	//4: Use validator to check for input
+	if($validator->passes() == true){
 
-	$invitation->fill($input);
+		$invitation = App\Models\Invitation::find($id);
 
-	$invitation->save();
 
-    return redirect('/invitations/'.$invitation->id);
+		if(Request::hasFile('photos')){
+
+			$newName = 'wedding'.$invitation->id.'.jpg';
+		 	Request::file('photos')->move('assets/photo',$newName);
+
+            $photo = new App\Models\Photo();
+            $photo->url = $newName;
+            $photo->invitation_id = $invitation->id;
+            $photo->save();
+		}
+
+		$invitation->fill($input);
+
+		$invitation->save();
+
+		return redirect ('/invitations/'.$invitation->id);
+		// ->with('message', 'Try again');
+
+	}else{
+		return redirect('invitations/'.$invitation->id.'edit')->withInput()->withErrors($validator);
+	}
 
 });
 
-Route::post('invitations', function ($id){
+
+Route::put('invitations/{id}', function ($id){
 
 	//1: Getting input
 	$input = Request::all();
@@ -111,7 +160,7 @@ Route::post('invitations', function ($id){
 	//4: Use validator to check for input
 	if($validator->passes() == true){
 
-		$guest = App\Models\Guest::find($input);
+		$guest = App\Models\Guest::find($id);
 
 		$guest->save();
 
@@ -122,10 +171,6 @@ Route::post('invitations', function ($id){
 		return redirect('invitations/'.$invitation->id)->withInput()->withErrors($validator);
 	}
 });
-
-
-
-
 
 
 Route::get('guests/create', function(){
@@ -153,7 +198,6 @@ Route::post('guests', function(){
 
 		$guest->save();
 
-
 		return redirect ('guests/1');
 
 		// return redirect ('guests/'.$invitation->guest->id);
@@ -163,9 +207,6 @@ Route::post('guests', function(){
 		return redirect('guests/create')->withInput()->withErrors($validator);
 	}
 });
-
-
-
 
 
 
@@ -194,35 +235,48 @@ Route::get('guests/{id}', function($id){
 // });
 
 
-Route::get('login', function(){
-	//To show login form
-	return view('adminlogin');
+// Route::get('login', function(){
+// 	//To show login form
+// 	return view('adminlogin');
 
-});
+// });
 
-Route::post('login', function(){
-	//1.Get user input to login
-	$input = Request::only('username','password');
+// Route::post('login', function(){
+// 	//1.Get user input to login
+// 	$input = Request::only('username','password');
 
-	//2.Ask Auth to check for correct login input
-	if(Auth::attempt($input) == true){
+// 	//2.Ask Auth to check for correct login input
+// 	if(Auth::attempt($input) == true){
 
-		return redirect('user/1');
-	}else{
-		return redirect('login');
-	};
-});
-// ->with('message', 'Try again');
+// 		return redirect('user/1');
+// 	}else{
+// 		return redirect('login');
+// 	};
+// });
+// // ->with('message', 'Try again');
 
 
 
-// Route::put('invitations/{id}/{code}', function($id,$code) {
+// Route::put('invitations/{id}/{usercode}', function($id,$usercode) {
 
 // 	return ''
 // });
 
-Route::get('message/{id}', function($id){
+Route::get('messages/{id}', function($id){
 
 	$invitation = App\Models\Invitation::find($id);
 	return view('guestmessage', ['invitation'=>'$invitation']);
 });
+//---------------------------LOGIN-------------------------------------//
+
+
+Route::get('login','LoginController@showLoginForm');
+Route::post('login','LoginController@processLogin');
+Route::get('logout','LoginController@logout');
+
+
+
+
+
+
+

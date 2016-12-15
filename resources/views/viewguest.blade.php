@@ -42,7 +42,7 @@
                                         <th>Usercode</th>
                                         <th>Firstname</th>
                                         <th>Lastname</th>
-                                        <th>Email</th>
+                                        {{-- <th>Email</th> --}}
                                         <th>Attendance</th>
                                         <th>+ one</th>
                                         <th>Vegeterian</th>
@@ -55,7 +55,7 @@
                                         <td>#{{$guest->usercode}}</td>
                                         <td>{{$guest->first_name}}</td>
                                         <td>{{$guest->last_name}}</td>
-                                        <td>{{$guest->email}}</td>
+                                       {{--  <td>{{$guest->email}}</td> --}}
                                         <td>{{$guest->attendance}}</td>
                                         <td>{{$guest->invitee}}</td>
                                         <td>{{$guest->vegeterian}}</td>

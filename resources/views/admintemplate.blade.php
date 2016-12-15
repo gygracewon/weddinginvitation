@@ -45,35 +45,43 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
+              {{--       <li class="active">
+                        <a href="{{url('/users/'.$invitation->user->id)}}.html"><i class="fa fa-user"></i> Edit Profile</a>
+                    </li> --}}
+
+                @foreach (App\Models\Invitation::all() as $invitation)
+
                     <li class="active">
-                        <a href="adminprofile.html"><i class="fa fa-user"></i> Edit Profile</a>
+                        <a href="{{url('/users/'.$invitation->user->id)}}.html"><i class="fa fa-user"></i> Edit Profile</a>
                     </li>
 
                     <li class="active">
-                        <a href="{{url('invitations/create')}}"><i class="fa fa-plus"></i> Create Invitation</a>
+                        <a href="{{url('/invitations/create')}}"><i class="fa fa-plus"></i> Create Invitation</a>
                     </li>
 
-                    {{--  <li>
-                        <a href="{{url('invitations/'.$invitation->id.'/edit')}}"><i class="fa fa-fw fa-wrench"></i> Edit Inivitation</a>
+                     <li>
+                        <a href="{{url('/invitations/'.$invitation->id.'/edit')}}"><i class="fa fa-fw fa-wrench"></i> Edit Inivitation</a>
                     </li>
               
                     <li>
-                        <a href="{{url('guests/'.$invitation->id)}}"><i class="fa fa-fw fa-eye"></i> View Guests</a>
-                    </li> --}}
+                        <a href="{{url('/guests/'.$invitation->id)}}"><i class="fa fa-fw fa-eye"></i> View Guests</a>
+                    </li>
                     <li>
-                        <a href="{{url('guests/create')}}"><i class="fa fa-fw fa-users"></i> Create Guests</a>
+                        <a href="{{url('/guests/create')}}"><i class="fa fa-fw fa-users"></i> Create Guests</a>
                     </li>
 
                     <li>
-                       {{--  @foreach(App\Models\Invitation::all() as $Invitation)
- --}}
-                        <a href="{{url('message/'.$invitation->id)}}"><i class="fa fa-fw fa-comment"></i> Message from Guests</a>
+
+                        <a href="{{url('/messages/'.$invitation->id)}}"><i class="fa fa-fw fa-comment"></i> Message from Guests</a>
                     </li>
                      
-                    </li>
-                    <li>
+                 {{--    <li>
                         <a href="sendemail.html"><i class="fa fa-fw fa-envelope"></i> Send Notification</a>
                     </li>
+ --}}
+                    @endforeach
+
+
 
                     @if (Auth::check())
                         <li>
@@ -81,7 +89,7 @@
                         </li> 
                     @else 
                         <li>    
-                            <a href="{{url('adminlogin')}}">Login</a>
+                            <a href="{{url('login/')}}">Login</a>
                         </li>
                     @endif    
 

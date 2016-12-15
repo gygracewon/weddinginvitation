@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-3">
 
-                {!! Form::open(['url' => 'invitation/'.$invitation->id, 'method'=>'put', 'role'=>'form']) !!}
+                {!! Form::open(['url' => 'invitations/'.$invitation->id, 'method'=>'put']) !!}
 {{-- 
                 <form role="form"> --}}
 
@@ -51,12 +51,13 @@
 
                        
                     </div>
-                       <div class="checkbox">
+                       {{-- <div class="checkbox">
                             <label>
                                  {{ Form::checkbox('name', 'value' )}} <p>Notify the changes to guests via email</p>
                             </label>
+                  
+                        </div> --}}
                             {{ Form::hidden('user_id', 1) }}
-                        </div>
 
                       {{ Form::submit('Submit',['class'=>'btn btn-primary']) }}
                     {{--   <button type="submit" class="btn btn-primary">Submit</button> --}}

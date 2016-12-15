@@ -23,14 +23,14 @@
                                 {{ Form::text('username','',['class'=>'form-control']) }}
                                 
                                 <label>Password</label>
-                                {{ Form::text('password','',['class'=>'form-control']) }}
+                                {{ Form::password('password','',['class'=>'form-control']) }}
                                 
                             </div>
                                 {{ Form::submit('Submit',['class'=>'btn btn-primary']) }}
 
                           {!! Form::close() !!}
 
-                        {{--   {{Session::get('message')}} --}}
+                          {{Session::get('message')}}
                     </div>         
                 </div>
 

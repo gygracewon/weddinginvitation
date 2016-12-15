@@ -8,7 +8,7 @@ class Invitation extends Model
 {
     //
     protected $fillable = [
-        'location', 'day', 'month', 'time', 'letter', 'user_id'
+        'location', 'day', 'month', 'time', 'letter' , 'user_id'
     ];
     public function guests(){
     	return $this->hasMany('App\Models\Guest');
